@@ -26,7 +26,7 @@
 <body>
   <div id="loading"><div class="box"><img src="jotios-target.png" alt="JOTIOS WRLD target artwork"><h1>JOTIOS WRLD AR</h1><p>Allow camera access, then point your phone at the printed Special Edition artwork.</p></div></div>
   <div id="ui" aria-live="polite"><div class="brand">JOTIOS WRLD • SPECIAL EDITION</div><div class="scan-wrap"><div class="scan-frame"><span class="corner2"></span><span class="corner3"></span></div></div><div id="message">Point your camera at the JOTIOS WRLD artwork.<br><button id="soundBtn" type="button">Tap for sound</button></div></div>
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; filterMinCF: 0.001; filterBeta: 0.01; missTolerance: 8; warmupTolerance: 5;" embedded color-space="sRGB" renderer="colorManagement: true; physicallyCorrectLights: true; antialias: true; alpha: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+  <a-scene mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; filterMinCF: 0.0001; filterBeta: 0.001; missTolerance: 12; warmupTolerance: 8;" embedded color-space="sRGB" renderer="colorManagement: true; physicallyCorrectLights: true; antialias: true; alpha: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
     <a-assets timeout="15000"><video id="jotiosVideo" src="jotios-video-web.mp4" preload="auto" loop playsinline webkit-playsinline muted crossorigin="anonymous"></video></a-assets>
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     <a-entity id="target" mindar-image-target="targetIndex: 0"><a-video src="#jotiosVideo" position="0 0 0.01" width="0.9" height="1.6"></a-video></a-entity>
