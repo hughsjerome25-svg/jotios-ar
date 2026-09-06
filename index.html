@@ -9,7 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   <style>
     :root { color-scheme: dark; } * { box-sizing: border-box; }
-    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05060a;font-family:Arial,Helvetica,sans-serif}
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:transparent;font-family:Arial,Helvetica,sans-serif}
+    a-scene,.a-canvas{background:transparent !important;}
     #loading{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:24px;background:#05060a;text-align:center}
     #loading .box{max-width:420px} #loading img{width:min(58vw,230px);max-height:42vh;object-fit:contain;border-radius:16px}
     #loading h1{margin:18px 0 8px;letter-spacing:.08em;font-size:1.2rem} #loading p{margin:0;opacity:.72;line-height:1.4;font-size:.94rem}
@@ -25,7 +26,7 @@
 <body>
   <div id="loading"><div class="box"><img src="jotios-target.png" alt="JOTIOS WRLD target artwork"><h1>JOTIOS WRLD AR</h1><p>Allow camera access, then point your phone at the printed Special Edition artwork.</p></div></div>
   <div id="ui" aria-live="polite"><div class="brand">JOTIOS WRLD • SPECIAL EDITION</div><div class="scan-wrap"><div class="scan-frame"><span class="corner2"></span><span class="corner3"></span></div></div><div id="message">Point your camera at the JOTIOS WRLD artwork.<br><button id="soundBtn" type="button">Tap for sound</button></div></div>
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; filterMinCF: 0.001; filterBeta: 0.01; missTolerance: 8; warmupTolerance: 5;" embedded color-space="sRGB" renderer="colorManagement: true; physicallyCorrectLights: true; antialias: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+  <a-scene mindar-image="imageTargetSrc: ./targets.mind; autoStart: true; filterMinCF: 0.001; filterBeta: 0.01; missTolerance: 8; warmupTolerance: 5;" embedded color-space="sRGB" renderer="colorManagement: true; physicallyCorrectLights: true; antialias: true; alpha: true" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
     <a-assets timeout="15000"><video id="jotiosVideo" src="jotios-video-web.mp4" preload="auto" loop playsinline webkit-playsinline muted crossorigin="anonymous"></video></a-assets>
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     <a-entity id="target" mindar-image-target="targetIndex: 0"><a-video src="#jotiosVideo" position="0 0 0.01" width="0.9" height="1.6"></a-video></a-entity>
